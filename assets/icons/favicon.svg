@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .bg { fill: #0a0b0f; }
+    .fg { fill: #f4f5f8; }
+    .dot { fill: #4d8fcc; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #fbfbfd; }
+      .fg { fill: #0e1426; }
+      .dot { fill: #2c6db3; }
+    }
+  </style>
+  <rect class="bg" width="32" height="32" rx="7"/>
+  <text class="fg" x="9" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="20" font-weight="700">h</text>
+  <circle class="dot" cx="23" cy="22" r="2.6"/>
+</svg>

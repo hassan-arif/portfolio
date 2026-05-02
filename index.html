@@ -1,1180 +1,318 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hassan's Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Hassan Mahmood, Software Engineer</title>
+    <meta name="description" content="Hassan Mahmood. Full stack software engineer shipping React Native and AI integrated mobile apps end to end." />
 
-    <!--
-    - favicon
-  -->
-    <link
-      rel="shortcut icon"
-      href="./assets/images/logo.ico"
-      type="image/x-icon"
-    />
-
-    <!--
-    - custom css link
-  -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-
-    <!--
-    - google font link
-  -->
+    <link rel="icon" href="./assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="./assets/icons/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var theme = saved || (prefersDark ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
   </head>
 
   <body>
-    <!--
-    - #MAIN
-  -->
+    <div class="scroll-progress" aria-hidden="true"></div>
 
-    <main>
-      <!--
-      - #SIDEBAR
-    -->
+    <header class="topnav">
+      <div class="topnav-inner">
+        <a class="topnav-brand" href="#top" aria-label="Home">
+          <img class="topnav-avatar" src="./assets/images/my-avatar.jpg" alt="Hassan Mahmood" width="32" height="32" />
+          <span class="topnav-wordmark">Hassan Mahmood</span>
+        </a>
 
-      <aside class="sidebar" data-sidebar>
-        <div class="sidebar-info">
-          <figure class="avatar-box">
-            <!-- https://getavataaars.com/ -->
-            <img
-              src="./assets/images/my-avatar.png"
-              alt="Hassan Mahmood"
-              width="80"
-              style="border-radius: 25%"
-            />
-          </figure>
-
-          <div class="info-content">
-            <h1 class="name" title="Hassan Mahmood">Hassan Mahmood</h1>
-            <p class="title">Software Engineer</p>
-          </div>
-
-          <button class="info_more-btn" data-sidebar-btn>
-            <span>Show Contact</span>
-
-            <ion-icon name="chevron-down"></ion-icon>
-          </button>
-        </div>
-
-        <div class="sidebar-info_more">
-          <div class="separator"></div>
-
-          <ul class="contacts-list">
-            <li class="contact-item">
-              <div class="icon-box">
-                <ion-icon name="mail-outline"></ion-icon>
-              </div>
-
-              <div class="contact-info">
-                <p class="contact-title">Email</p>
-
-                <a
-                  href="mailto:hassanarifmahmood@gmail.com"
-                  class="contact-link"
-                  >hassanarifmahmood@gmail.com</a
-                >
-              </div>
-            </li>
-
-            <li class="contact-item">
-              <div class="icon-box">
-                <ion-icon name="calendar-outline"></ion-icon>
-              </div>
-
-              <div class="contact-info">
-                <p class="contact-title">Birthyear</p>
-
-                <time datetime="2001">2001</time>
-              </div>
-            </li>
-
-            <li class="contact-item">
-              <div class="icon-box">
-                <ion-icon name="location-outline"></ion-icon>
-              </div>
-
-              <div class="contact-info">
-                <p class="contact-title">Location</p>
-
-                <address>Lahore, Pakistan</address>
-              </div>
-            </li>
-          </ul>
-
-          <div class="separator"></div>
-
-          <ul class="social-list">
-            <li class="social-item">
-              <a href="https://github.com/hassan-arif" class="social-link" target="_blank">
-                <ion-icon name="logo-github"></ion-icon>
-              </a>
-            </li>
-
-            <li class="social-item">
-              <a
-                href="https://www.linkedin.com/in/ihassanmahmood/"
-                class="social-link"
-                target="_blank"
-              >
-                <ion-icon name="logo-linkedin"></ion-icon>
-              </a>
-            </li>
-
-            <li class="social-item">
-              <a
-                href="https://wakatime.com/@8c559fa0-fa9f-424b-b7e9-f23470599396"
-                class="social-link"
-                target="_blank"
-              >
-                <img
-                  src="https://wakatime.com/badge/user/8c559fa0-fa9f-424b-b7e9-f23470599396.svg"
-                  alt="WakaTime Badge"
-                />
-              </a>
-            </li>
-
-            <!-- <li class="social-item" title="View my coding stats on WakaTime">
-              <a
-                href="https://wakatime.com/@8c559fa0-fa9f-424b-b7e9-f23470599396"
-                class="social-link"
-              >
-                <img
-                  src="https://wakatime.com/favicon.ico"
-                  alt="WakaTime Logo"
-                  style="width: 20px; height: 20px"
-                />
-              </a>
-            </li> -->
-          </ul>
-        </div>
-      </aside>
-
-      <!--
-      - #main-content
-    -->
-
-      <div class="main-content">
-        <!--
-        - #NAVBAR
-      -->
-
-        <nav class="navbar">
-          <ul class="navbar-list">
-            <li class="navbar-item">
-              <button class="navbar-link active" data-nav-link>About</button>
-            </li>
-
-            <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Resume</button>
-            </li>
-
-            <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Portfolio</button>
-            </li>
-
-            <!-- <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Blog</button>
-            </li> -->
-
-            <!-- <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Contact</button>
-            </li> -->
-          </ul>
+        <nav class="topnav-links" aria-label="Sections">
+          <a href="#work">Work</a>
+          <a href="#stack">Stack</a>
+          <a href="#stats">Receipts</a>
+          <a href="#contact">Contact</a>
         </nav>
 
-        <!--
-        - #ABOUT
-      -->
-
-        <article class="about active" data-page="about">
-          <header>
-            <h2 class="h2 article-title">About me</h2>
-          </header>
-
-          <section class="about-text">
-            <p>
-              I am an Associate Software Engineer at Dubizzle Labs, passionate about building scalable solutions. With over 1,500+ hours of focused coding logged, I specialize in building performance-driven architectures using React Native, Next.js, and React.
-            </p>
-
-            <p>
-              I enjoy solving complex problems and creating intuitive, beautiful designs. My focus is on maintainability, performance, and security, ensuring that every project I work on meets production-grade standards.
-            </p>
-          </section>
-
-          <!--
-          - service
-        -->
-
-          <section class="service">
-            <h3 class="h3 service-title">What i'm doing</h3>
-
-            <ul class="service-list">
-              <!-- <li class="service-item">
-                <div class="service-icon-box">
-                  <img
-                    src="./assets/images/icon-design.svg
-                "
-                    alt="design icon"
-                    width="40"
-                  />
-                </div>
-
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Web design</h4>
-
-                  <p class="service-item-text">
-                    The most modern and high-quality design made at a
-                    professional level.
-                  </p>
-                </div>
-              </li> -->
-
-              <li class="service-item">
-                <div class="service-icon-box">
-                 <ion-icon name="code-slash-outline" style="color: var(--orange-yellow-crayola); font-size: 40px; margin: auto; display: block;"></ion-icon>
-                </div>
-
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Web Development</h4>
-
-                  <p class="service-item-text">
-                    Building responsive and dynamic websites using React, Next.js, and modern CSS frameworks.
-                  </p>
-                </div>
-              </li>
-
-              <li class="service-item">
-                <div class="service-icon-box">
-                 <ion-icon name="phone-portrait-outline" style="color: var(--orange-yellow-crayola); font-size: 40px; margin: auto; display: block;"></ion-icon>
-                </div>
-
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Mobile Apps</h4>
-
-                  <p class="service-item-text">
-                    Developing cross-platform mobile applications for iOS and Android using React Native and Expo.
-                  </p>
-                </div>
-              </li>
-
-              <li class="service-item">
-                <div class="service-icon-box">
-                 <ion-icon name="hardware-chip-outline" style="color: var(--orange-yellow-crayola); font-size: 40px; margin: auto; display: block;"></ion-icon>
-                </div>
-
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">AI & ML</h4>
-
-                  <p class="service-item-text">
-                    Integrating AI features and building deep learning models for intelligent applications.
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </section>
-          <!--
-          - testimonials
-        -->
-
-          <!-- <section class="testimonials">
-            <h3 class="h3 testimonials-title">Testimonials</h3>
-
-            <ul class="testimonials-list has-scrollbar">
-              <li class="testimonials-item">
-                <div class="content-card" data-testimonials-item>
-                  <figure class="testimonials-avatar-box">
-                    <img
-                      src="./assets/images/avatar-1.png"
-                      alt="Daniel lewis"
-                      width="60"
-                      data-testimonials-avatar
-                    />
-                  </figure>
-
-                  <h4
-                    class="h4 testimonials-item-title"
-                    data-testimonials-title
-                  >
-                    Daniel lewis
-                  </h4>
-
-                  <div class="testimonials-text" data-testimonials-text>
-                    <p>
-                      Richard was hired to create a corporate identity. We were
-                      very pleased with the work done. She has a lot of
-                      experience and is very concerned about the needs of
-                      client. Lorem ipsum dolor sit amet, ullamcous cididt
-                      consectetur adipiscing elit, seds do et eiusmod tempor
-                      incididunt ut laborels dolore magnarels alia.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li class="testimonials-item">
-                <div class="content-card" data-testimonials-item>
-                  <figure class="testimonials-avatar-box">
-                    <img
-                      src="./assets/images/avatar-2.png"
-                      alt="Jessica miller"
-                      width="60"
-                      data-testimonials-avatar
-                    />
-                  </figure>
-
-                  <h4
-                    class="h4 testimonials-item-title"
-                    data-testimonials-title
-                  >
-                    Jessica miller
-                  </h4>
-
-                  <div class="testimonials-text" data-testimonials-text>
-                    <p>
-                      Richard was hired to create a corporate identity. We were
-                      very pleased with the work done. She has a lot of
-                      experience and is very concerned about the needs of
-                      client. Lorem ipsum dolor sit amet, ullamcous cididt
-                      consectetur adipiscing elit, seds do et eiusmod tempor
-                      incididunt ut laborels dolore magnarels alia.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li class="testimonials-item">
-                <div class="content-card" data-testimonials-item>
-                  <figure class="testimonials-avatar-box">
-                    <img
-                      src="./assets/images/avatar-3.png"
-                      alt="Emily evans"
-                      width="60"
-                      data-testimonials-avatar
-                    />
-                  </figure>
-
-                  <h4
-                    class="h4 testimonials-item-title"
-                    data-testimonials-title
-                  >
-                    Emily evans
-                  </h4>
-
-                  <div class="testimonials-text" data-testimonials-text>
-                    <p>
-                      Richard was hired to create a corporate identity. We were
-                      very pleased with the work done. She has a lot of
-                      experience and is very concerned about the needs of
-                      client. Lorem ipsum dolor sit amet, ullamcous cididt
-                      consectetur adipiscing elit, seds do et eiusmod tempor
-                      incididunt ut laborels dolore magnarels alia.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li class="testimonials-item">
-                <div class="content-card" data-testimonials-item>
-                  <figure class="testimonials-avatar-box">
-                    <img
-                      src="./assets/images/avatar-4.png"
-                      alt="Henry william"
-                      width="60"
-                      data-testimonials-avatar
-                    />
-                  </figure>
-
-                  <h4
-                    class="h4 testimonials-item-title"
-                    data-testimonials-title
-                  >
-                    Henry william
-                  </h4>
-
-                  <div class="testimonials-text" data-testimonials-text>
-                    <p>
-                      Richard was hired to create a corporate identity. We were
-                      very pleased with the work done. She has a lot of
-                      experience and is very concerned about the needs of
-                      client. Lorem ipsum dolor sit amet, ullamcous cididt
-                      consectetur adipiscing elit, seds do et eiusmod tempor
-                      incididunt ut laborels dolore magnarels alia.
-                    </p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </section> -->
-
-          <!--
-          - testimonials modal
-        -->
-
-          <!-- <div class="modal-container" data-modal-container>
-            <div class="overlay" data-overlay></div>
-
-            <section class="testimonials-modal">
-              <button class="modal-close-btn" data-modal-close-btn>
-                <ion-icon name="close-outline"></ion-icon>
-              </button>
-
-              <div class="modal-img-wrapper">
-                <figure class="modal-avatar-box">
-                  <img
-                    src="./assets/images/avatar-1.png"
-                    alt="Daniel lewis"
-                    width="80"
-                    data-modal-img
-                  />
-                </figure>
-
-                <img src="./assets/images/icon-quote.svg" alt="quote icon" />
-              </div>
-
-              <div class="modal-content">
-                <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-                <time datetime="2021-06-14">14 June, 2021</time>
-
-                <div data-modal-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were
-                    very pleased with the work done. She has a lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum
-                    dolor sit amet, ullamcous cididt consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels
-                    dolore magnarels alia.
-                  </p>
-                </div>
-              </div>
-            </section>
-          </div> -->
-
-          <!--
-          - clients
-        -->
-
-          <!-- <section class="clients">
-            <h3 class="h3 clients-title">Clients</h3>
-
-            <ul class="clients-list has-scrollbar">
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-1-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-2-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-3-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-4-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-5-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-6-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-            </ul>
-          </section> -->
-        </article>
-
-        <!--
-        - #RESUME
-      -->
-
-        <article class="resume" data-page="resume">
-          <header>
-            <h2 class="h2 article-title">Resume</h2>
-          </header>
-
-          <section class="timeline">
-            <div class="title-wrapper">
-              <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
-              </div>
-
-              <h3 class="h3">Education</h3>
-            </div>
-
-            <ol class="timeline-list">
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">
-                  Bachelor's degree - FAST NUCES Lahore
-                </h4>
-
-                <span>2020 — 2024</span>
-
-                <p class="timeline-text">
-                  Computer Science<br>
-                  Cumulative GPA: 3.56/4.00
-                </p>
-              </li>
-
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">Intermediate (High School) - Kips College</h4>
-
-                <span>2018 — 2020</span>
-
-                <p class="timeline-text">
-                  Computer Science<br>
-                  Cumulative Grade: A+
-                </p>
-              </li>
-            </ol>
-          </section>
-
-          <section class="timeline">
-            <div class="title-wrapper">
-              <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
-              </div>
-
-              <h3 class="h3">Experience</h3>
-            </div>
-
-            <ol class="timeline-list">
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">
-                  Associate Software Engineer - Dubizzle Labs
-                </h4>
-
-                <span>2024 — Present</span>
-
-                <p class="timeline-text">
-                  Building scalable products serving millions of users across multiple high-traffic brands.<br><br>
-                  &bullet; <strong>Real Estate Affiliate App:</strong> Built a second tenant app by refactoring an existing codebase within 2 months. (50K+ downloads).<br>
-                  &bullet; <strong>Classifieds Platform:</strong> Provided frontend support and maintenance for a leading classifieds platform (10M+ downloads), ensuring stability for 8+ tenants.<br>
-                  &bullet; <strong>Property Management System:</strong> Maintained a comprehensive property management platform, enabling residents and overseas clients to track portfolios, bookings, and payments.<br><br>
-                  <strong>Technologies:</strong> React Native, React, RTK Query, Redux Thunk, Ant Design.
-                </p>
-              </li>
-            </ol>
-          </section>
-
-          <section class="skill">
-            <h3 class="h3 skills-title">My skills</h3>
-
-            <ul class="skills-list content-card">
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">Mobile Dev (React Native, Expo, iOS/Android)</h5>
-                  <data value="95">95%</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 95%"></div>
-                </div>
-              </li>
-
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">Frontend Web (React.js, Tailwind, TypeScript)</h5>
-                  <data value="90">90%</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 90%"></div>
-                </div>
-              </li>
-
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">Backend & Cloud (Node.js, Supabase, Firebase)</h5>
-                  <data value="80">80%</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 80%"></div>
-                </div>
-              </li>
-
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">AI Engineering (GenAI, LLMs, Computer Vision)</h5>
-                  <data value="70">70%</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 70%"></div>
-                </div>
-              </li>
-            </ul>
-          </section>
-        </article>
-
-        <!--
-        - #PORTFOLIO
-      -->
-
-        <article class="portfolio" data-page="portfolio">
-          <header>
-            <h2 class="h2 article-title">Portfolio</h2>
-          </header>
-
-          <section class="projects">
-            <ul class="filter-list">
-              <li class="filter-item">
-                <button class="active" data-filter-btn>All</button>
-              </li>
-
-              <li class="filter-item">
-                <button data-filter-btn>Web development</button>
-              </li>
-
-              <li class="filter-item">
-                <button data-filter-btn>Mobile app development</button>
-              </li>
-
-              <li class="filter-item">
-                <button data-filter-btn>AI / ML</button>
-              </li>
-            </ul>
-
-            <div class="filter-select-box">
-              <button class="filter-select" data-select>
-                <div class="select-value" data-selecct-value>
-                  Select category
-                </div>
-
-                <div class="select-icon">
-                  <ion-icon name="chevron-down"></ion-icon>
-                </div>
-              </button>
-
-              <ul class="select-list">
-                <li class="select-item">
-                  <button data-select-item>All</button>
-                </li>
-
-                <li class="select-item">
-                  <button data-select-item>Web development</button>
-                </li>
-
-                <li class="select-item">
-                  <button data-select-item>Mobile app development</button>
-                </li>
-
-                <li class="select-item">
-                  <button data-select-item>AI / ML</button>
-                </li>
-              </ul>
-            </div>
-
-            <ul class="project-list">
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="mobile app development"
-              >
-                <a href="https://github.com/hassan-arif/attune" target="_blank">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-7.png"
-                      alt="Attune"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">Attune - AI Mindfulness</h3>
-
-                  <p class="project-category">Mobile App</p>
-                </a>
-              </li>
-
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="mobile app development"
-              >
-                <a href="https://github.com/hassan-arif/mindflect" target="_blank">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-1.png"
-                      alt="Mindflect"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">Mindflect - AI Journaling</h3>
-
-                  <p class="project-category">Mobile App</p>
-                </a>
-              </li>
-
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="mobile app development"
-              >
-                <a href="https://github.com/hassan-arif/chalo" target="_blank">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-2.png"
-                      alt="Chalo"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">Chalo - Ride Hailing</h3>
-
-                  <p class="project-category">Mobile App</p>
-                </a>
-              </li>
-
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="mobile app development"
-              >
-                <a href="https://github.com/hassan-arif/mehfil" target="_blank">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-3.png"
-                      alt="Mehfil"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">Mehfil - Social Media</h3>
-
-                  <p class="project-category">Mobile App</p>
-                </a>
-              </li>
-
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="web development"
-              >
-                <a href="https://runtime-pi.vercel.app/" target="_blank">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-8.jpg"
-                      alt="Runtime"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">Runtime</h3>
-
-                  <p class="project-category">Web Development</p>
-                </a>
-              </li>
-
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="mobile app development"
-              >
-                <a href="https://github.com/hassan-arif/guftagu" target="_blank">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-4.png"
-                      alt="Guftagu"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">Guftagu - Chat App</h3>
-
-                  <p class="project-category">Mobile App</p>
-                </a>
-              </li>
-
-             <li
-                class="project-item active"
-                data-filter-item
-                data-category="web development"
-              >
-                <a href="https://github.com/hassan-arif/cocode" target="_blank">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-5.png"
-                      alt="Cocode"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">Cocode - Collab Editor</h3>
-
-                  <p class="project-category">Web Development</p>
-                </a>
-              </li>
-
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="ai / ml"
-              >
-                <a href="https://github.com/Radiance-Of-The-Smile" target="_blank">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-6.png"
-                      alt="Radiance Of The Smile"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">Radiance Of The Smile</h3>
-
-                  <p class="project-category">AI / ML</p>
-                </a>
-              </li>
-            </ul>
-          </section>
-        </article>
-
-        <!--
-        - #BLOG
-      -->
-
-        <!-- <article class="blog" data-page="blog">
-          <header>
-            <h2 class="h2 article-title">Blog</h2>
-          </header>
-
-          <section class="blog-posts">
-            <ul class="blog-posts-list">
-              <li class="blog-post-item">
-                <a href="#">
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-1.jpg"
-                      alt="Design conferences in 2022"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Design</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">
-                      Design conferences in 2022
-                    </h3>
-
-                    <p class="blog-text">
-                      Veritatis et quasi architecto beatae vitae dicta sunt,
-                      explicabo.
-                    </p>
-                  </div>
-                </a>
-              </li>
-
-              <li class="blog-post-item">
-                <a href="#">
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-2.jpg"
-                      alt="Best fonts every designer"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Design</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">
-                      Best fonts every designer
-                    </h3>
-
-                    <p class="blog-text">
-                      Sed ut perspiciatis, nam libero tempore, cum soluta nobis
-                      est eligendi.
-                    </p>
-                  </div>
-                </a>
-              </li>
-
-              <li class="blog-post-item">
-                <a href="#">
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-3.jpg"
-                      alt="Design digest #80"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Design</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                    <p class="blog-text">
-                      Excepteur sint occaecat cupidatat no proident, quis
-                      nostrum exercitationem ullam corporis suscipit.
-                    </p>
-                  </div>
-                </a>
-              </li>
-
-              <li class="blog-post-item">
-                <a href="#">
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-4.jpg"
-                      alt="UI interactions of the week"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Design</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">
-                      UI interactions of the week
-                    </h3>
-
-                    <p class="blog-text">
-                      Enim ad minim veniam, consectetur adipiscing elit, quis
-                      nostrud exercitation ullamco laboris nisi.
-                    </p>
-                  </div>
-                </a>
-              </li>
-
-              <li class="blog-post-item">
-                <a href="#">
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-5.jpg"
-                      alt="The forgotten art of spacing"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Design</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">
-                      The forgotten art of spacing
-                    </h3>
-
-                    <p class="blog-text">
-                      Maxime placeat, sed do eiusmod tempor incididunt ut labore
-                      et dolore magna aliqua.
-                    </p>
-                  </div>
-                </a>
-              </li>
-
-              <li class="blog-post-item">
-                <a href="#">
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-6.jpg"
-                      alt="Design digest #79"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Design</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                    <p class="blog-text">
-                      Optio cumque nihil impedit uo minus quod maxime placeat,
-                      velit esse cillum.
-                    </p>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </section>
-        </article> -->
-
-        <!--
-        - #CONTACT
-      -->
-
-        <!-- <article class="contact" data-page="contact">
-          <header>
-            <h2 class="h2 article-title">Contact</h2>
-          </header>
-
-          <section class="mapbox" data-mapbox>
-            <figure>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d435521.9536726809!2d74.00473526794504!3d31.482517988876463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe6ccc7e2462!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1737486141719!5m2!1sen!2s"
-                width="400"
-                height="300"
-                loading="lazy"
-              ></iframe>
-            </figure>
-          </section>
-
-          <section class="contact-form">
-            <h3 class="h3 form-title">Contact Form</h3>
-
-            <form action="#" class="form" data-form id="contactForm">
-              <div class="input-wrapper">
-                <input
-                  type="text"
-                  name="fullname"
-                  class="form-input"
-                  placeholder="Full name"
-                  required
-                  data-form-input
-                />
-
-                <input
-                  type="email"
-                  name="email"
-                  class="form-input"
-                  placeholder="Email address"
-                  required
-                  data-form-input
-                />
-              </div>
-
-              <textarea
-                name="message"
-                class="form-input"
-                placeholder="Your Message"
-                required
-                data-form-input
-              ></textarea>
-
-              <button class="form-btn" type="submit" disabled data-form-btn>
-                <ion-icon name="paper-plane"></ion-icon>
-                <span>Send Message</span>
-              </button>
-            </form>
-          </section>
-        </article> -->
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme" data-theme-toggle>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
       </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" data-cursor-glow>
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="container hero-inner reveal">
+          <p class="eyebrow">Software Engineer, Lahore</p>
+          <h1 class="display">
+            <span>Hassan</span>
+            <span>Mahmood<span class="accent-dot">.</span></span>
+          </h1>
+          <p class="lead">
+            Full stack engineer focused on shipping React Native and AI integrated mobile apps end to end, from architecture through store releases. Currently shipping Attune, Mindflect, and scaling Propforce Affiliates (50K+ downloads).
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#work">View work</a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </div>
+          <ul class="hero-socials" aria-label="Social links">
+            <li>
+              <a href="https://github.com/hassan-arif" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.92.58.11.79-.25.79-.55v-1.93c-3.2.7-3.87-1.54-3.87-1.54-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18a10.96 10.96 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.05.78 2.12v3.14c0 .31.21.67.8.55 4.56-1.53 7.85-5.84 7.85-10.92C23.5 5.65 18.35.5 12 .5z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/ihassanmahmood/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.36 4.26 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.78C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.78 24h20.44c.99 0 1.78-.77 1.78-1.73V1.72C24 .77 23.21 0 22.22 0z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://wakatime.com/@8c559fa0-fa9f-424b-b7e9-f23470599396" target="_blank" rel="noopener" aria-label="WakaTime">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:hassanarifmahmood@gmail.com" aria-label="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="container reveal">
+          <p class="eyebrow">About</p>
+          <h2 class="section-title">A few facts</h2>
+          <p class="prose">
+            Born 2001 in Lahore, Pakistan. Computer Science, FAST NUCES (GPA 3.56). Currently Software Engineer at Dubizzle Labs, owning the Android and iOS release pipeline for the Propforce suite. Outside that, I build and ship products from idea to App Store, fast.
+          </p>
+        </div>
+      </section>
+
+      <section class="work" id="work">
+        <div class="container">
+          <div class="reveal">
+            <p class="eyebrow">Selected Work</p>
+            <h2 class="section-title">What I&rsquo;m shipping</h2>
+          </div>
+
+          <div class="feature-list">
+            <article class="feature-card reveal">
+              <div class="feature-rule" aria-hidden="true"></div>
+              <div class="feature-head">
+                <span class="feature-index">01</span>
+                <h3 class="feature-title">Attune</h3>
+                <p class="feature-tagline">Voice-first mindfulness</p>
+              </div>
+              <p class="feature-body">
+                A polished mindfulness app with secure auth, an AI-driven voice agent that controls device settings via tool calls, persistent sessions, and 60fps Skia and Reanimated visuals.
+              </p>
+              <p class="tech-line">React Native, Expo, ElevenLabs, Skia, Reanimated, Clerk, Appwrite</p>
+              <div class="feature-links">
+                <a href="https://github.com/hassan-arif/attune" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://drive.google.com/file/d/1tgJG0_hT2YwndpyMA9yZjFlhAh0yCyy1/view" target="_blank" rel="noopener">Demo</a>
+              </div>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-rule" aria-hidden="true"></div>
+              <div class="feature-head">
+                <span class="feature-index">02</span>
+                <h3 class="feature-title">Mindflect</h3>
+                <p class="feature-tagline">AI-powered journaling</p>
+              </div>
+              <p class="feature-body">
+                Cross-platform journaling with daily prompts, AI categorization, streaming chat over your past entries, photo uploads, and Stripe-gated Pro tier on a Sanity-backed CMS.
+              </p>
+              <p class="tech-line">Expo, React Native, Tamagui, Clerk, Sanity CMS, Vercel AI SDK, Groq, Stripe</p>
+              <div class="feature-links">
+                <a href="https://github.com/hassan-arif/mindflect" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-rule" aria-hidden="true"></div>
+              <div class="feature-head">
+                <span class="feature-index">03</span>
+                <h3 class="feature-title">Propforce Affiliates</h3>
+                <p class="feature-tagline">Real estate app, Dubizzle Labs</p>
+              </div>
+              <p class="feature-body">
+                Rebuilt the Zameen and Bayut Shorakaa app from scratch in 3 months, then launched a second white-labeled tenant for Saudi Arabia in 3 more on Android and iOS. Tenanting via build flavors and Firebase Remote Config (force update, feature flags). 50K+ downloads.
+              </p>
+              <p class="tech-line">React Native, RTK Query, Redux Thunk, Firebase, Sentry, CodePush</p>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-rule" aria-hidden="true"></div>
+              <div class="feature-head">
+                <span class="feature-index">04</span>
+                <h3 class="feature-title">Runtime</h3>
+                <p class="feature-tagline">Event management platform</p>
+              </div>
+              <p class="feature-body">
+                Next.js 16 server components, MongoDB with cached connection strategy, Cloudinary media, PostHog analytics, OGL light-ray hero. Slug-based routing and SEO-tuned event pages.
+              </p>
+              <p class="tech-line">Next.js 16, TypeScript, MongoDB, Mongoose, Tailwind, Cloudinary, PostHog, OGL</p>
+              <div class="feature-links">
+                <a href="https://github.com/hassan-arif/runtime" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://runtime-pi.vercel.app/" target="_blank" rel="noopener">Live</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="reveal">
+            <h3 class="more-title">More builds</h3>
+          </div>
+
+          <ul class="more-grid">
+            <li class="more-item reveal">
+              <a href="https://github.com/hassan-arif/chalo" target="_blank" rel="noopener">
+                <h4>Chalo</h4>
+                <p>Ride hailing app with maps, routing, driver selection, and Stripe Payment Sheet.</p>
+                <p class="tech-line">Expo, Clerk, Neon Postgres, Stripe, react-native-maps, Zustand</p>
+              </a>
+            </li>
+            <li class="more-item reveal">
+              <a href="https://github.com/hassan-arif/mehfil" target="_blank" rel="noopener">
+                <h4>Mehfil</h4>
+                <p>Real-time social app with text, image, and video posts. Optimistic UI, notifications.</p>
+                <p class="tech-line">Expo Router, React Native, Supabase, Expo AV</p>
+              </a>
+            </li>
+            <li class="more-item reveal">
+              <a href="https://github.com/hassan-arif/cocode" target="_blank" rel="noopener">
+                <h4>Cocode</h4>
+                <p>Real-time collaborative code editor with WebSocket-synced rooms.</p>
+                <p class="tech-line">React, Node.js, WebSockets, MongoDB</p>
+              </a>
+            </li>
+            <li class="more-item reveal">
+              <a href="https://github.com/hassan-arif/guftagu" target="_blank" rel="noopener">
+                <h4>Guftagu</h4>
+                <p>Real-time mobile chat with auth, one-to-one messaging, and persistent sessions.</p>
+                <p class="tech-line">Expo Router, React Native, Firebase, NativeWind, Lottie</p>
+              </a>
+            </li>
+            <li class="more-item reveal">
+              <a href="https://github.com/Radiance-Of-The-Smile" target="_blank" rel="noopener">
+                <h4>Radiance Of The Smile</h4>
+                <p>Two-stage dental X-ray pipeline. YOLOv8 detects teeth, DenseNet-121 classifies conditions.</p>
+                <p class="tech-line">React, FastAPI, YOLOv8, DenseNet-121</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="stack" id="stack">
+        <div class="container reveal">
+          <p class="eyebrow">Capabilities</p>
+          <h2 class="section-title">The stack</h2>
+
+          <dl class="stack-list">
+            <div class="stack-row">
+              <dt>Languages</dt>
+              <dd>TypeScript, JavaScript, Python, SQL</dd>
+            </div>
+            <div class="stack-row">
+              <dt>Mobile and Web</dt>
+              <dd>React Native, Expo, React, Next.js, Tailwind CSS</dd>
+            </div>
+            <div class="stack-row">
+              <dt>Backend and Cloud</dt>
+              <dd>Node.js, FastAPI, Firebase, Supabase, PostgreSQL, MongoDB</dd>
+            </div>
+            <div class="stack-row">
+              <dt>AI Engineering</dt>
+              <dd>Vercel AI SDK, Groq, ElevenLabs, OpenAI, Computer Vision (YOLOv8, DenseNet)</dd>
+            </div>
+            <div class="stack-row">
+              <dt>Practice</dt>
+              <dd>End-to-end shipping, release pipelines, AI-paired refactoring with Claude Code</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="stats" id="stats">
+        <div class="container reveal">
+          <p class="eyebrow">By the numbers</p>
+          <h2 class="section-title">Receipts</h2>
+
+          <ul class="stat-list">
+            <li class="stat">
+              <span class="stat-num" data-count-to="2000" data-count-suffix="+">0</span>
+              <span class="stat-label">Hours coded on WakaTime</span>
+            </li>
+            <li class="stat">
+              <span class="stat-num" data-count-to="50" data-count-suffix="K+">0</span>
+              <span class="stat-label">Downloads on shipped products</span>
+            </li>
+            <li class="stat">
+              <span class="stat-num" data-count-to="8" data-count-suffix="">0</span>
+              <span class="stat-label">Country tenants maintained</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="container reveal">
+          <p class="eyebrow">Say hello</p>
+          <h2 class="section-title">Let&rsquo;s talk</h2>
+          <p class="prose contact-lead">
+            I&rsquo;m open to interesting work and conversations. Email is fastest. LinkedIn works too.
+          </p>
+
+          <div class="contact-grid">
+            <a class="contact-card" href="mailto:hassanarifmahmood@gmail.com">
+              <span class="contact-card-label">Email</span>
+              <span class="contact-card-value">hassanarifmahmood@gmail.com</span>
+            </a>
+            <a class="contact-card" href="https://github.com/hassan-arif" target="_blank" rel="noopener">
+              <span class="contact-card-label">GitHub</span>
+              <span class="contact-card-value">@hassan-arif</span>
+            </a>
+            <a class="contact-card" href="https://www.linkedin.com/in/ihassanmahmood/" target="_blank" rel="noopener">
+              <span class="contact-card-label">LinkedIn</span>
+              <span class="contact-card-value">@ihassanmahmood</span>
+            </a>
+            <a class="contact-card" href="https://wakatime.com/@8c559fa0-fa9f-424b-b7e9-f23470599396" target="_blank" rel="noopener">
+              <span class="contact-card-label">WakaTime</span>
+              <span class="contact-card-value">2,000+ hrs and counting</span>
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!--
-    - custom js link
-  -->
-    <script src="./assets/js/script.js"></script>
+    <footer class="footer">
+      <div class="container">
+        <p>Hassan Mahmood. Built without frameworks.</p>
+      </div>
+    </footer>
 
-    <!--
-    - ionicon link
-  -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+    <script src="./assets/js/script.js" defer></script>
   </body>
 </html>
